@@ -9,23 +9,27 @@ const beatlesAlbumSchema = new Schema(
     },
     temas: [
       {
+        titulo:{
+          type: String,
+          required: true,
+          trim: true
+        },
         duracion: {
           type: String,
           required: true,
-          trim: true,
+          trim: true
         },
 
         compositor: {
           type: String,
           required: true,
-          trim: true,
+          trim: true
         },
         letra: {
           type: String,
-          required: true,
-          trim: true,
-        },
-      },
+          trim: true
+        }
+      }
     ],
     año: {
       type: String,
@@ -36,4 +40,4 @@ const beatlesAlbumSchema = new Schema(
   { versionKey: false }
 );
 
-module.exports = model("songs", beatlesSongsSchema);
+module.exports = model("albums", beatlesAlbumSchema);
